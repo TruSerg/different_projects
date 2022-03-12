@@ -4,7 +4,11 @@ import Counter from "../../../../commonComponent/Counter";
 
 import styles from "./styles.module.scss";
 
-const ReduxCounterLayout = ({ countersList, handleCounterCreate }) => {
+const ReduxCounterLayout = ({
+  countersList,
+  handleCounterCreate,
+  handleIncrement,
+}) => {
   return (
     <div>
       <h1 className={styles.title}>Redux counters</h1>
@@ -29,9 +33,12 @@ const ReduxCounterLayout = ({ countersList, handleCounterCreate }) => {
         </div>
 
         <div>
-          {countersList.map(({ countValue }) => (
-            <div className={styles.countersWrapper}>
-              <Counter countValue={countValue} />
+          {countersList.map(({ id, countValue }) => (
+            <div key={id} className={styles.countersWrapper}>
+              <Counter
+                countValue={countValue}
+                handleIncrement={() => handleIncrement(id)}
+              />
             </div>
           ))}
         </div>

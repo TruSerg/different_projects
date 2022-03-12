@@ -5,4 +5,5 @@ export const ROUTES = {
   FUNCTIONAL_COUNTER: "/functional-counter",
   COUNTER_OF_COUNTERS: "/counters",
   REDUX_COUNTER: "/redux-counter",
+  FORM: "/form",
 };

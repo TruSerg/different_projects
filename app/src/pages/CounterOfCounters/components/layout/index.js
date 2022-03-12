@@ -6,7 +6,6 @@ import styles from "./styles.module.scss";
 import { useMemo } from "react";
 
 const CounterOfCountersLayout = ({
-  index,
   countersList,
   handleCreateCounter,
   handleCounterRemove,
@@ -38,21 +37,12 @@ const CounterOfCountersLayout = ({
           </Button>
           <Button
             className={styles.btn}
-            onClick={() => handleCounterRemove(index)}
-            variant="outlined"
-            color="error"
-          >
-            Remove counter
-          </Button>
-          <Button
-            className={styles.btn}
             onClick={handleCountersClear}
             variant="contained"
           >
             Reset
           </Button>
         </div>
-
         <div>
           {countersList.map((counter, index) => (
             <div className={styles.countersWrapper}>
@@ -62,6 +52,7 @@ const CounterOfCountersLayout = ({
                 handleIncrement={() => handleIncrement(index)}
                 handleDecrement={() => handleDecrement(index)}
                 handleReset={() => handleReset(index)}
+                handleCounterRemove={() => handleCounterRemove(index)}
               />
             </div>
           ))}

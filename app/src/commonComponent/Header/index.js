@@ -38,6 +38,11 @@ const Header = () => {
             Redux counter
           </Button>
         </Link>
+        <Link className={styles.button} to={ROUTES.FORM}>
+          <Button variant="contained" color="success">
+            Forms
+          </Button>
+        </Link>
       </Container>
     </div>
   );
