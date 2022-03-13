@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import {
   Card,
   CardContent,
@@ -7,16 +9,18 @@ import {
   CardActionArea,
   CardActions,
 } from "@mui/material";
-import { memo } from "react";
+import { withStyles } from "@mui/styles";
 
 import userImage from "../../static/images/userImage.png";
 
-const MaterialCard = ({ name, age, city, handleRemove }) => {
+import styles from "./styles";
+
+const MaterialCard = ({ name, age, city, handleRemove, classes }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={classes.wrapper} sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia component="img" height="140" image={userImage} alt="user" />
-        <CardContent>
+        <CardContent className={classes.contentWrapper}>
           <Typography gutterBottom variant="h5" component="div">
             {`${name} - ${age}`}
           </Typography>
@@ -39,4 +43,4 @@ const MaterialCard = ({ name, age, city, handleRemove }) => {
   );
 };
 
-export default memo(MaterialCard);
+export default memo(withStyles(styles)(MaterialCard));

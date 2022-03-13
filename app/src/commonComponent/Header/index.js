@@ -43,6 +43,11 @@ const Header = () => {
             Forms
           </Button>
         </Link>
+        <Link className={styles.button} to={ROUTES.TODO_LIST}>
+          <Button variant="contained" color="success">
+            Todo list
+          </Button>
+        </Link>
       </Container>
     </div>
   );
